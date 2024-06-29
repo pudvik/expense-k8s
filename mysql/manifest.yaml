@@ -1,0 +1,31 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mysql
+  labels:
+    component: mysql
+    tier: database
+    project: expense
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      component: mysql
+      tier: database
+      project: expense
+
+  template:
+    metadata:
+
+      labels:
+        component: mysql
+        tier: database
+        project: expense
+      
+    spec:
+      containers:
+      - name: mysql
+        image: pudviks/mysql:1.0
+
+

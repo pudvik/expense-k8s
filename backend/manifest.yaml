@@ -36,6 +36,9 @@ spec:
       containers:
       - name: mysql
         image: pudviks/mysql:1.0
+        envFrom:
+        - configMapRef:
+            name: backend
 
 
 ---

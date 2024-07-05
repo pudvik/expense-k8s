@@ -36,6 +36,13 @@ spec:
       containers:
       - name: mysql
         image: pudviks/mysql:1.0
+        resources:
+          requests:
+            cpu: "100m"
+            mem: "128Mi"
+          limits:
+            cpu: "120m"
+            mem: "138Mi" 
         envFrom:
         - configMapRef:
             name: backend

@@ -120,6 +120,13 @@ spec:
       containers:
       - name: frontend
         image: pudviks/frontend:1.0
+        resources:
+          requests:
+            cpu: "100m"
+            mem: "128Mi"
+          limits:
+            cpu: "120m"
+            mem: "138Mi"
         volumeMounts:
         - name: nginx-conf
           mountPath: /etc/nginx/nginx.conf

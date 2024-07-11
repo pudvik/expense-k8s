@@ -50,6 +50,16 @@ spec:
         envFrom:
         - configMapRef:
             name: backend
+      readinessProbe:
+        tcpSocket:
+          port: 3306
+        initialDelaySeconds: 15
+        periodSeconds: 10
+      livenessProbe:
+        tcpSocket:
+          port: 3306
+        initialDelaySeconds: 15
+        periodSeconds: 10
 
 
 ---

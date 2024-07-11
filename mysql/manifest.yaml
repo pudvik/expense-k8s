@@ -28,6 +28,16 @@ spec:
       containers:
       - name: mysql
         image: pudviks/mysql:1.0
+        readinessProbe:
+          tcpSocket:
+            port: 3306
+          initialDelaySeconds: 10
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 3306
+          initialDelaySeconds: 10
+          periodSeconds: 10
 
 
 
